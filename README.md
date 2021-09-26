@@ -11,6 +11,8 @@ Functions:
 6) Loading Level from file
 7) WASD-controlling
 8) Game Over
+
+There are a lot of things in TODO section, but have no time for implementing it
 -----
 
 Простая консольная игра, написанная после курса по C. Как курсовая работа для ознакомления.
@@ -25,3 +27,5 @@ Functions:
 6) Подбор ключей, открывание дверей
 7) WASD - управление
 8) Гейм-овер
+
+В ТОДО много записано, однако, на реализацию всего времени особо не было.
