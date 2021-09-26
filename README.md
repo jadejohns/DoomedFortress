@@ -14,6 +14,8 @@ Functions:
 
 There are a lot of things in TODO section, but have no time for implementing it
 There are no checks really for smooth start, so don't forget to download .exe with .lvl file or it will crash
+
+Was coded in 72 hours.
 -----
 
 Простая консольная игра, написанная после курса по C. Как курсовая работа для ознакомления.
@@ -31,3 +33,4 @@ There are no checks really for smooth start, so don't forget to download .exe wi
 
 В ТОДО много записано, однако, на реализацию всего времени особо не было.
 Проверки не писались, поэтому для теста не забывайте скачивать .exe и .lvl файлы
+Была написана за 3 дня на скорость.
