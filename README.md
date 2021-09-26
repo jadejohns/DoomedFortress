@@ -21,6 +21,7 @@ Builded on Dev-C++
 Tetsed on Windows 7 and Windows 10
 
 For best exp use rastr font in console 10x18. I ain't hardcoded it here
+
 -----
 
 Простая консольная игра, написанная после курса по C. Как курсовая работа для ознакомления.
