@@ -20,6 +20,7 @@ Was coded in 72 hours in 2017.
 Builded on Dev-C++
 Tetsed on Windows 7 and Windows 10
 
+For best exp use rastr font in console 10x18. I ain't hardcoded it here
 -----
 
 Простая консольная игра, написанная после курса по C. Как курсовая работа для ознакомления.
@@ -41,3 +42,5 @@ Tetsed on Windows 7 and Windows 10
 
 Собрано на Dev-C++
 Проверено на Windows 10 и Windows 7
+
+Для наилучшего опыта в консоли поставьте точечный шрфит 10х18. Захардкодить это я не успел.
