@@ -17,6 +17,9 @@ There are no checks really for smooth start, so don't forget to download .exe wi
 
 Was coded in 72 hours.
 
+Builded on Dev-C++
+Tetsed on Windows 7 and Windows 10
+
 -----
 
 Простая консольная игра, написанная после курса по C. Как курсовая работа для ознакомления.
@@ -35,3 +38,6 @@ Was coded in 72 hours.
 В ТОДО много записано, однако, на реализацию всего времени особо не было.
 Проверки не писались, поэтому для теста не забывайте скачивать .exe и .lvl файлы
 Была написана за 3 дня на скорость.
+
+Собрано на Dev-C++
+Проверено на Windows 10 и Windows 7
