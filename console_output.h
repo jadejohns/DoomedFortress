@@ -1,8 +1,8 @@
-//Работа c консолью Windows
+
 #ifndef CONSOLE_OUTPUT_H
 #define CONSOLE_OUTPUT_H
 
-//Подключаем библиотеки
+//РџРѕРґРєР»СЋС‡Р°РµРј Р±РёР±Р»РёРѕС‚РµРєРё
 #include <windows.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -11,7 +11,7 @@
 #include <math.h>
 #include <unistd.h>
 
-//Определяем цвета (взято с MSDN)
+//РћРїСЂРµРґРµР»СЏРµРј С†РІРµС‚Р° (РІР·СЏС‚Рѕ СЃ MSDN)
 #define Black 0
 #define Blue 1
 #define Green 2
@@ -30,11 +30,11 @@
 #define BrightWhite 15
 
 /*
-Для версии Windows ниже 8.1 НЕ ВКЛЮЧАТЬ ДЕФОЛТОМ РАСТРОВЫЙ ШРИФТ 
-(Столкновения по read_char с растровыми шрифтами в старой версии консоли Windows (от XP до 2008R2) не работают
+Р”Р»СЏ РІРµСЂСЃРёРё Windows РЅРёР¶Рµ 8.1 РќР• Р’РљР›Р®Р§РђРўР¬ Р”Р•Р¤РћР›РўРћРњ Р РђРЎРўР РћР’Р«Р™ РЁР РР¤Рў 
+(РЎС‚РѕР»РєРЅРѕРІРµРЅРёСЏ РїРѕ read_char СЃ СЂР°СЃС‚СЂРѕРІС‹РјРё С€СЂРёС„С‚Р°РјРё РІ СЃС‚Р°СЂРѕР№ РІРµСЂСЃРёРё РєРѕРЅСЃРѕР»Рё Windows (РѕС‚ XP РґРѕ 2008R2) РЅРµ СЂР°Р±РѕС‚Р°СЋС‚
 */
 
-//Инициализация окна
+//РРЅРёС†РёР°Р»РёР·Р°С†РёСЏ РѕРєРЅР°
 void win_init(int width, int height)
 {
 	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
@@ -62,7 +62,7 @@ void win_init(int width, int height)
 
 }
 
-//Положение курсора
+//РџРѕР»РѕР¶РµРЅРёРµ РєСѓСЂСЃРѕСЂР°
 void gotoxy(int x, int y)
 {
 	COORD coord;
@@ -71,7 +71,7 @@ void gotoxy(int x, int y)
 	SetConsoleCursorPosition(hConsole, coord);
 }
 
-//Инициализируем работу с цветом в консоли
+//РРЅРёС†РёР°Р»РёР·РёСЂСѓРµРј СЂР°Р±РѕС‚Сѓ СЃ С†РІРµС‚РѕРј РІ РєРѕРЅСЃРѕР»Рё
 void set_color(WORD color)
 {
 	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
@@ -79,14 +79,14 @@ void set_color(WORD color)
 	return;
 }
 
-//Установка отдельно цвета цвета текста и фона, чтобы не считать
+//РЈСЃС‚Р°РЅРѕРІРєР° РѕС‚РґРµР»СЊРЅРѕ С†РІРµС‚Р° С†РІРµС‚Р° С‚РµРєСЃС‚Р° Рё С„РѕРЅР°, С‡С‚РѕР±С‹ РЅРµ СЃС‡РёС‚Р°С‚СЊ
 void text_color (int txtColor,int bckColor)
 {
 	int color=16*bckColor+txtColor;
 	set_color(color);
 }
 
-//Очистка экрана (стащил с MSDN)
+//РћС‡РёСЃС‚РєР° СЌРєСЂР°РЅР° (СЃС‚Р°С‰РёР» СЃ MSDN)
 void clr_scr()
 {
 	COORD coordScreen={0,0};
@@ -102,28 +102,28 @@ void clr_scr()
 	SetConsoleCursorPosition(hConsole, coordScreen);
 }
 
-//Функция рисования окантовки окна (заглушка)
+//Р¤СѓРЅРєС†РёСЏ СЂРёСЃРѕРІР°РЅРёСЏ РѕРєР°РЅС‚РѕРІРєРё РѕРєРЅР° (Р·Р°РіР»СѓС€РєР°)
 void frame(unsigned x1,unsigned y1,unsigned x2,unsigned y2,char txt[])
 {  
-		//без этих параметров отрисовывалась неправильно
+		//Р±РµР· СЌС‚РёС… РїР°СЂР°РјРµС‚СЂРѕРІ РѕС‚СЂРёСЃРѕРІС‹РІР°Р»Р°СЃСЊ РЅРµРїСЂР°РІРёР»СЊРЅРѕ
 		unsigned i,j,k; 
 		k=(x2-x1);                       
 		j=k/8;                          
 		j-=1;
-		//Верхний левый угол  
+		//Р’РµСЂС…РЅРёР№ Р»РµРІС‹Р№ СѓРіРѕР»  
 		gotoxy(x1,y1);
 		putchar(0xC9);
-		//Верхний правый угол
+		//Р’РµСЂС…РЅРёР№ РїСЂР°РІС‹Р№ СѓРіРѕР»
 		gotoxy(x2,y1);
 		putchar(0xBB);
-		//printf("»");
-		//Нижний левый угол      
+		//printf("В»");
+		//РќРёР¶РЅРёР№ Р»РµРІС‹Р№ СѓРіРѕР»      
 		gotoxy(x1,y2);
 		putchar(0xC8);
-		//Нижний правый угол      
+		//РќРёР¶РЅРёР№ РїСЂР°РІС‹Р№ СѓРіРѕР»      
 		gotoxy(x2,y2);
 		putchar(0xBC);
-			//Рисуем горизонтальные границы  
+			//Р РёСЃСѓРµРј РіРѕСЂРёР·РѕРЅС‚Р°Р»СЊРЅС‹Рµ РіСЂР°РЅРёС†С‹  
 			for (i=x1+1;i<x2;i++)
 			   {
 				  gotoxy(i,y1);
@@ -131,7 +131,7 @@ void frame(unsigned x1,unsigned y1,unsigned x2,unsigned y2,char txt[])
 				  gotoxy(i,y2);
 				  putchar(0xCD);    
 			   }
-			//Рисуем вертикальные границы
+			//Р РёСЃСѓРµРј РІРµСЂС‚РёРєР°Р»СЊРЅС‹Рµ РіСЂР°РЅРёС†С‹
 			for (i=y1+1;i<y2;i++)
 			   {
 				  gotoxy(x1,i);
@@ -139,39 +139,39 @@ void frame(unsigned x1,unsigned y1,unsigned x2,unsigned y2,char txt[])
 				  gotoxy(x2,i);
 				  putchar(0xBA);
 			   }
-			//Текст окошка
+			//РўРµРєСЃС‚ РѕРєРѕС€РєР°
 				  gotoxy(x1+j,y1);
 				  printf(txt); 
 
 	
 }
 
-//Заливка рамки цветом (заглушка)
+//Р—Р°Р»РёРІРєР° СЂР°РјРєРё С†РІРµС‚РѕРј (Р·Р°РіР»СѓС€РєР°)
 void frame_fill(unsigned x1,unsigned y1,unsigned x2,unsigned y2,unsigned col)
 {
 	int x,y;
-	//Определяем цвет
+	//РћРїСЂРµРґРµР»СЏРµРј С†РІРµС‚
 	set_color(col);  
-	//Заливка по Y                     
+	//Р—Р°Р»РёРІРєР° РїРѕ Y                     
 	for (y=y1;y<y2;y++)                    
-		{	//Заливка по X
+		{	//Р—Р°Р»РёРІРєР° РїРѕ X
 			for (x=x1;x<x2;x++)               
 				{
-				  //По всем координатам вставляем символ пробела		
+				  //РџРѕ РІСЃРµРј РєРѕРѕСЂРґРёРЅР°С‚Р°Рј РІСЃС‚Р°РІР»СЏРµРј СЃРёРјРІРѕР» РїСЂРѕР±РµР»Р°		
 				  gotoxy(x,y);
 				  printf(" ");     
 				}
 		}
 }
 
-//Готовая процедура рисовки окна 
+//Р“РѕС‚РѕРІР°СЏ РїСЂРѕС†РµРґСѓСЂР° СЂРёСЃРѕРІРєРё РѕРєРЅР° 
 void make_frame(unsigned x1,unsigned y1,unsigned x2,unsigned y2,unsigned col,char txt_[])
 {
 	frame_fill(x1,y1,x2,y2,col);
 	frame(x1,y1,x2,y2,txt_);
 }
 
-//Хватаем символ в положении курсора (взято с WINAPI.H)
+//РҐРІР°С‚Р°РµРј СЃРёРјРІРѕР» РІ РїРѕР»РѕР¶РµРЅРёРё РєСѓСЂСЃРѕСЂР° (РІР·СЏС‚Рѕ СЃ WINAPI.H)
 char cursor_char_get()
 {
     char c = 0;
@@ -189,7 +189,7 @@ char cursor_char_get()
     return c;
 }
 
-//Cчитываем символ в положении курсора
+//CС‡РёС‚С‹РІР°РµРј СЃРёРјРІРѕР» РІ РїРѕР»РѕР¶РµРЅРёРё РєСѓСЂСЃРѕСЂР°
 char char_read(int x,int y)
 {
     gotoxy(x,y);
