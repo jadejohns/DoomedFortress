@@ -15,7 +15,7 @@ Functions:
 There are a lot of things in TODO section, but have no time for implementing it
 There are no checks really for smooth start, so don't forget to download .exe with .lvl file or it will crash
 
-Was coded in 72 hours.
+Was coded in 72 hours in 2017.
 
 Builded on Dev-C++
 Tetsed on Windows 7 and Windows 10
@@ -37,7 +37,7 @@ Tetsed on Windows 7 and Windows 10
 
 В ТОДО много записано, однако, на реализацию всего времени особо не было.
 Проверки не писались, поэтому для теста не забывайте скачивать .exe и .lvl файлы
-Была написана за 3 дня на скорость.
+Была написана за 3 дня на скорость в 2017
 
 Собрано на Dev-C++
 Проверено на Windows 10 и Windows 7
