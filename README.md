@@ -16,6 +16,7 @@ There are a lot of things in TODO section, but have no time for implementing it
 There are no checks really for smooth start, so don't forget to download .exe with .lvl file or it will crash
 
 Was coded in 72 hours.
+
 -----
 
 Простая консольная игра, написанная после курса по C. Как курсовая работа для ознакомления.
